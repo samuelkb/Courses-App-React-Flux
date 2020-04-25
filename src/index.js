@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { render } from "react-dom";
-import HomePage from "./components/HomePage";
+import App from "./components/App";
 
 //create-react-app looks at index.js to determine what files are in your app.
 /* 
@@ -17,5 +17,5 @@ The first one is the component that we want to render.
 JSX supports self-closing tags much like HTML.
 The second argument, we need to tell React which DM element it should render into
 */
-render(<HomePage />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));
 //We use the div called 'root' defined on index.html, line 31.

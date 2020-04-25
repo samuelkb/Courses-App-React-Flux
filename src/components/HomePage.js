@@ -10,9 +10,14 @@ function HomePage() {
     <div className="jumbotron">
       <h1>Pluralsight Administration </h1>
       <p>React, Flux, and React Router for ultra-responsive web apps.</p>
+      <a href="/about">About</a>
     </div>
   );
   //By default everything in each file is private.
+  /*
+  The href It's not good for the performance. It's posting back to the server.
+  So it's slower, and we lose client-side state.
+  */
 }
 
 //That is why we need to export to allow the file be used for other components.
