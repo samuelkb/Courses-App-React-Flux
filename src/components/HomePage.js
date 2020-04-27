@@ -1,4 +1,10 @@
 import React from "react";
+import styled, { keyframes } from "styled-components";
+import { bounce } from "react-animations";
+
+const Bounce = styled.div`
+  animation: 3s ${keyframes`${bounce}`} infinite;
+`;
 
 function HomePage() {
   //The JS convention is to use PascalCase for things that can be instantiated
@@ -8,7 +14,9 @@ function HomePage() {
   //We use className instead class, one rara defference between JSX and HTML
   return (
     <div className="jumbotron">
-      <h1>Pluralsight Administration </h1>
+      <Bounce>
+        <h1>Pluralsight Administration </h1>
+      </Bounce>
       <p>React, Flux, and React Router for ultra-responsive web apps.</p>
       <a href="/about">About</a>
     </div>
