@@ -3,7 +3,7 @@ import { getCourses } from "../api/courseApi";
 
 class CoursesPage extends React.Component {
   state = {
-    Courses: [],
+    courses: [],
   };
 
   componentDidMount() {
@@ -23,8 +23,32 @@ class CoursesPage extends React.Component {
     //get courses from the API. When the call completes, store the array of courses in state.
   }
 
+  renderRow(course) {
+    return (
+      <tr>
+        <td>{course.title}</td>
+        <td>{course.authorId}</td>
+        <td>{course.category}</td>
+      </tr>
+    );
+  }
+
   render() {
-    return <h2>Courses</h2>;
+    return (
+      <>
+        <h2>Courses</h2>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author ID</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>{this.state.courses.map(this.renderRow)}</tbody>
+        </table>
+      </>
+    );
   }
 }
 
