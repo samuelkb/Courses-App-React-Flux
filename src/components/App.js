@@ -4,21 +4,18 @@ import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import Header from "./common/Header";
 import CoursesPage from "./CoursesPage";
+import { Route } from "react-router-dom";
 
 //In Js we can nest functions inside functions
-
+//GetPage deleted, will not be used
+//The 'exact' word indicates this route should only match if the URL is exactly
 function App() {
-  function getPage() {
-    //This property is built into all browsers
-    const route = window.location.pathname;
-    if (route === "/courses") return <CoursesPage />;
-    if (route === "/about") return <AboutPage />;
-    return <HomePage />;
-  }
   return (
     <div className="container-fluid">
       <Header />
-      {getPage()}
+      <Route path="/" exact component={HomePage} />
+      <Route path="/courses" component={CoursesPage} />
+      <Route path="/about" component={AboutPage} />
     </div>
   );
 }
