@@ -9,6 +9,7 @@ import { Route } from "react-router-dom";
 //In Js we can nest functions inside functions
 //GetPage deleted, will not be used
 //The 'exact' word indicates this route should only match if the URL is exactly
+//At this point, each component is reloaded when you choose a menu
 function App() {
   return (
     <div className="container-fluid">
