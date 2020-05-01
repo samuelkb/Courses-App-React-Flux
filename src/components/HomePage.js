@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { bounce } from "react-animations";
+import { Link } from "react-router-dom";
 
 const Bounce = styled.div`
   animation: 3s ${keyframes`${bounce}`} infinite;
@@ -18,9 +19,12 @@ function HomePage() {
         <h1>Pluralsight Administration </h1>
       </Bounce>
       <p>React, Flux, and React Router for ultra-responsive web apps.</p>
-      <a href="/about">About</a>
+      <Link to="about" className="btn btn-primary">
+        About
+      </Link>
     </div>
   );
+  //With Link we can handle from client urls, without go to the server
   //By default everything in each file is private.
   /*
   The href It's not good for the performance. It's posting back to the server.
